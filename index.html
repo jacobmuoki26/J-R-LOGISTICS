@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>JM LOGISTICS</title>
+
+<link rel="stylesheet"
+href="style.css">
+</head>
+<body>
+
+    <div class="container">
+<div id="loginForm">
+<form action="login.php" method="POST">
+<h2>Login</h2>
+<div class="input-field">
+<input type="email" name="email" placeholder="" required>
+<label>Email</label>
+</div> <br>
+
+<div class="password-box">
+<input type="password" id="loginPassword" name="password" placeholder="" required>
+<button type="button" onclick="togglePassword('loginPassword',this)"> Show</button>
+<label>Password</label>
+</div><br>
+
+<button type="submit"> Login </button>
+
+<p> Don't have an account?<a href="#" onclick="showSignup()"> Sign Up </a> </p>
+
+<p> <a href="#" onclick="showOTP()"> Forgot Password? </a></p>
+</form>
+<div id="OTP" class="hidden">
+<form action="sendOTP.php" method="POST">
+    <div class="input-field">
+<input type="email" name="email" placeholder="" required>
+<label>Enter Email</label>
+</div>
+<br><br>
+
+<button> Send OTP </button>
+</form>
+</div>
+</div>
+
+<div id="signupForm" class="hidden">
+<form action="signup.php" method="POST">
+<h2>Sign Up</h2>
+
+<div class="input-field">
+  <input type="text" name="fullname" placeholder="" required>
+  <label>Full Name</label>
+</div><br>
+
+<div class="input-field">
+  <input type="text" name="username" placeholder="" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d_]{5,20}$" title="5-20 characters, must contain letters and numbers"required>
+  <label>Username</label>
+</div><br>
+
+<div class="input-field">
+  <input type="email" name="email" placeholder="" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Enter a valid Gmail address" required>
+  <label>Email</label>
+</div><br>
+
+<div class="input-field">
+ <input type="tel" name="phoneNumber" placeholder="" pattern="[0-9]{10,15}" required>
+ <label>Phone Number</label>
+</div><br>
+
+<div class="password-box">
+<input type="password" id="signupPassword" name="password" required placeholder="" required>
+<button type="button" onclick="togglePassword('signupPassword',this)"> Show </button>
+<label>Password</label>
+</div><br>
+
+<div class="password-box">
+<input type="password" id="confirmPassword" name="confirmPassword" placeholder="" required>
+<button type="button" onclick="togglePassword('confirmPassword',this)"> Show </button>
+<label>Confirm Password</label>
+</div><BR>
+
+<button type="submit"> Create Account</button>
+<p>Already have an account? <a href="#" onclick="showLogin()"> Login </a> </p>
+
+</form> </div> </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
